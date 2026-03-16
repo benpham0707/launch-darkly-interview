@@ -1,0 +1,350 @@
+/**
+ * Global Styles for RecEngine Application
+ *
+ * Design principles:
+ * - Clean, modern card-based layout
+ * - Responsive grid (3 columns on desktop, 1 on mobile)
+ * - Color-coded algorithm badges for visual clarity during demo
+ * - Smooth transitions for better UX
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f7fa;
+  color: #2d3748;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* User Selector */
+.user-selector {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-selector h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #2d3748;
+}
+
+.user-type-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-type-button {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.user-type-button:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+}
+
+.user-type-button.active {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+}
+
+.user-id-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-id-input label {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.user-id-input input {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.user-id-input input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Dashboard */
+.dashboard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #667eea;
+}
+
+.dashboard h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #2d3748;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-item {
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.dashboard-item-label {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-item-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.algorithm-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.algorithm-badge.simple {
+  background: #bee3f8;
+  color: #2c5282;
+}
+
+.algorithm-badge.complex {
+  background: #d6bcfa;
+  color: #553c9a;
+}
+
+.dashboard-explanation {
+  padding: 1rem;
+  background: #edf2f7;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-content {
+  padding: 1.25rem;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.75rem;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  flex: 1;
+}
+
+.category-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+}
+
+.category-badge.electronics {
+  background: #bee3f8;
+  color: #2c5282;
+}
+
+.category-badge.books {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.category-badge.clothing {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.category-badge.home {
+  background: #feebc8;
+  color: #7c2d12;
+}
+
+.category-badge.sports {
+  background: #e9d8fd;
+  color: #553c9a;
+}
+
+.product-description {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #f6ad55;
+  font-size: 1rem;
+}
+
+.algorithm-note {
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #4a5568;
+  border-left: 3px solid #667eea;
+}
+
+.product-score {
+  font-weight: 700;
+  color: #667eea;
+}
+
+/* Loading and Error States */
+.loading,
+.error-message {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #718096;
+}
+
+.error-message {
+  background: #fed7d7;
+  color: #742a2a;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .user-type-buttons {
+    flex-direction: column;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
